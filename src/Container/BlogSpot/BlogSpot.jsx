@@ -51,7 +51,7 @@ class BlogPost extends Component{
         fetch('http://localhost:3001/mahasiswa',{
             method: 'post',
             headers: {
-                'Accept': 'applicarion/json',
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(this.state.insertArtikel)

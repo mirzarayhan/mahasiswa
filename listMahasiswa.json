@@ -15,6 +15,15 @@
       "hp": "081802023523",
       "angkatan": 2014,
       "status": "lulus"
+    },
+    {
+      "id": 1614851850489,
+      "nim": "1841720205",
+      "nama": "Meghan",
+      "alamat": "Jl. Sarden Timur ",
+      "hp": "08277743323",
+      "angkatan": "2017",
+      "status": "Lulus"
     }
   ]
 }
