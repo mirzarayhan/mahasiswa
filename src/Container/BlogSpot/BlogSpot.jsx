@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './BlogSpot.css';
 import Post from "../../Component/BlogSpot/Post";
+import API from "../../Services/index"
 
 class BlogPost extends Component{
     state = {
@@ -17,11 +18,9 @@ class BlogPost extends Component{
     }
 
     ambilDataDariServerAPI = () => {
-        fetch('http://localhost:3001/mahasiswa')
-        .then(response => response.json())
-        .then(jsonHasilAmbilDariAPI => {
+        API.getNewsBlog().then(result => {
             this.setState({
-                listArtikel: jsonHasilAmbilDariAPI
+                listArtikel: result
             })
         })
     }
@@ -31,10 +30,10 @@ class BlogPost extends Component{
     }
 
     handleHapusArtikel = (data) => {
-        fetch(`http://localhost:3001/mahasiswa/${data}`,{method: 'DELETE'})
-        .then(res => {
-            this.ambilDataDariServerAPI()
-        })
+        API.deleteNewsBlog(data)
+            .then((response) => {
+                this.ambilDataDariServerAPI();
+            })
     }
 
     handleTambahArtikel = (event) =>{
@@ -48,17 +47,10 @@ class BlogPost extends Component{
     }
 
     handleTombolSimpan = () => {
-        fetch('http://localhost:3001/mahasiswa',{
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(this.state.insertArtikel)
-        })
-        .then((Response) => {
-            this.ambilDataDariServerAPI();
-        });
+        API.postNewsBlog(this.state.insertArtikel)
+            .then( (response) => {
+                this.ambilDataDariServerAPI();
+            });
     }
 
     render(){
@@ -90,13 +82,13 @@ class BlogPost extends Component{
                         </div>
                     </div>
                     <div className="form-group row">
-                        <label htmlFor="angkatan" className="col-sm-2 col-form-label">angkatan</label>
+                        <label htmlFor="angkatan" className="col-sm-2 col-form-label">Angkatan</label>
                         <div className="col-sm-10">
                             <input type="text" className="form-control" id="angkatan" name="angkatan" onChange={this.handleTambahArtikel}/>
                         </div>
                     </div>
                     <div className="form-group row">
-                        <label htmlFor="status" className="col-sm-2 col-form-label">status</label>
+                        <label htmlFor="status" className="col-sm-2 col-form-label">Status</label>
                         <div className="col-sm-10">
                             <input type="text" className="form-control" id="status" name="status" onChange={this.handleTambahArtikel}/>
                         </div>

@@ -1,22 +1,6 @@
 {
   "mahasiswa": [
     {
-      "NIM": 180823453,
-      "nama": "Mahasiswa 1",
-      "alamat": "Jl. Soekarno Hatta No. 9 Malang",
-      "hp": "081802023249",
-      "angkatan": 2018,
-      "status": "aktif"
-    },
-    {
-      "NIM": 140823453,
-      "nama": "Mahasiswa X",
-      "alamat": "Jl. Menur No. 9 Surabaya",
-      "hp": "081802023523",
-      "angkatan": 2014,
-      "status": "lulus"
-    },
-    {
       "id": 1614851850489,
       "nim": "1841720205",
       "nama": "Meghan",
@@ -24,6 +8,15 @@
       "hp": "08277743323",
       "angkatan": "2017",
       "status": "Lulus"
+    },
+    {
+      "id": 1618510495887,
+      "nim": "1002300100",
+      "nama": "Reposting",
+      "alamat": "Jl. Barham B7.89",
+      "hp": "08766645234",
+      "angkatan": "2019",
+      "status": "Belum Lulus"
     }
   ]
 }
